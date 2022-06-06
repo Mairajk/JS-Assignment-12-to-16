@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="" onsubmit="scale() ; return false ">
+        <h1> Number Scale</h1>
+        <label for=""> Enter a number for scaling :</label> 
+        <input type="number" id="nFs">
+        <br><br>
+        <button type="submit">Click</button>
+    </form> <br>
+    <h1 id="scale"></h1> <br><hr><br> 
+
+    <form action="" onsubmit="check() ; return false">
+    <h1> Vowels Checker </h1> 
+    <label for=""> Enter an Alphabet : </label> 
+    <input type="text" id="vInput"> <br><br>
+    <button type="submit"> Vowels </button>
+
+    </form> 
+    <h1 id="vResult"></h1><br><hr><br> 
+
+    <form action="" onsubmit="pass() ; return false">
+        <h1> Password</h1>
+        <label for=""> Enter Your Password :</label>
+        <input type="password" id="inputPass"> <br><br>
+        <button type="submit"> login </button>
+    </form>
+    <h1 id = "passR" ></h1><br><hr><br> 
+
+
+    <form action="" onsubmit = " clock() ; return false ">
+        <h1> Clock </h1>
+    <label for=""> Enter Time in "24 hour format" : </label>
+     <input type="number" id="InputTime"><br><br>
+     <button type="submit"> Greetings </button>
+    </form>
+    <h1 id="greetings"></h1> <br><hr><br> 
+
+
+
+
+    <script>
+
+         // JavaScript for Scale
+
+        function scale() {
+            
+            let nFs = document.querySelector("#nFs").value ;
+
+
+            let scale = " " ;
+            //  result = Number(result);
+
+            if ( nFs < 0 ) {
+                scale = ` ${nFs} is a Negative Number `
+            }
+             else if ( nFs > 0) {
+                scale = ` ${nFs} is a Positive Number `
+            } 
+            else if ( nFs == 0) {
+                scale = ` Your Result is 0 `
+            }
+            else {
+                scale  = `?`
+            }
+
+            document.querySelector("#scale").innerHTML = scale ;
+
+        }
+
+
+        //JavaScript for vowel
+
+        function check() {
+
+            let vInput =  document.querySelector("#vInput").value ;
+            let vResult =  "" ;
+            
+            if ( vInput ==  `a` || vInput == `e` || vInput == `i` || vInput == `o` || vInput == `u`  ) {
+                vResult = ` ${vInput} is a vowel Alphabhet .  `
+            } else {
+                vResult = ` ${vInput} is not a vowel Alphabet .  `
+            }
+            document.querySelector("#vResult").innerHTML = vResult ;
+
+        }
+
+            // JavaScript for Password
+
+        function pass() {
+
+            let rPass = "hello" ;
+            let passR = " " ;
+            let inputPass = document.querySelector("#inputPass").value ;
+
+            if (inputPass == rPass) {
+                passR = " Correct !"
+            }
+             else if (inputPass === "") {
+                passR = " Please Enter Your Password !"
+            }
+             else {
+                passR = " Incorrect ! "
+            }
+                
+            document.querySelector("#passR").innerHTML = passR ;
+   
+        }
+
+
+        // JavaScript for clock 
+
+        function clock() {
+            let iTime = document.querySelector("#InputTime").value ;
+            let greetings = "" ;
+            if (iTime >= 0000 &&  iTime < 1200 ) {
+                greetings = " Good morning!"
+            }
+             else if (iTime >= 1200 &&  iTime < 1700 ) {
+                greetings = " Good afternoon! "
+            }
+             else if (iTime >= 1700 &&  iTime < 2100 ) {
+                 greetings = " Good morning! "
+             }
+              else if (iTime >= 2100 &&  iTime <= 2359 ) {
+             greetings = " Good night! " 
+            } 
+            else {
+                greetings = " Please Enter a valid time !"
+            }
+
+            document.querySelector("#greetings").innerHTML = greetings ;
+        }
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
